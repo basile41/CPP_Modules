@@ -6,13 +6,17 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 18:31:46 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/03 20:00:48 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/04 12:08:25 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
-#include <algorithm>
+
+void	str_toupper(char *str)
+{
+	for (int i = 0; str[i]; i++)
+		str[i] = std::toupper(str[i]);
+}
 
 int main(int argc, char **argv)
 {
@@ -22,9 +26,8 @@ int main(int argc, char **argv)
 	{
 		for (int i = 1; i < argc; i++)
 		{
-			std::string str(argv[i]);
-			std::transform(str.begin(), str.end(), str.begin(), toupper);
-			std::cout << str << std::endl;
+			str_toupper(argv[i]);
+			std::cout << argv[i] << std::endl;
 		}
 	}
 }
