@@ -15,16 +15,16 @@ class PhoneBook
 		PhoneBook();
 		~PhoneBook();
 		void	addContact();
-		void	addContact( std::string first_name,
-							std::string last_name,
-							std::string nickname,
-							std::string phone_number,
-							std::string darkest_secret);
-		void	printPhoneBook();
+		void	addContact( std::string const first_name,
+							std::string const last_name,
+							std::string const nickname,
+							std::string const phone_number,
+							std::string const darkest_secret);
+		void	printPhoneBook() const;
 
 	private:
-		Contact			contact[PB_SIZE];
-		unsigned int	id;
+		Contact			_contact[PB_SIZE];
+		unsigned int	_id;
 
 };
 

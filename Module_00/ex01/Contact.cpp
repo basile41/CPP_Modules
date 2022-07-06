@@ -5,34 +5,35 @@
 */
 
 Contact::Contact()
+: _first_name(""), _last_name(""), _nickname(""), _phone_number(""), _darkest_secret("")
 {
-	this->first_name = "";
-	this->last_name = "";
-	this->nickname = "";
-	this->phone_number = "";
-	this->darkest_secret = "";
+	// this->first_name = "";
+	// this->last_name = "";
+	// this->nickname = "";
+	// this->phone_number = "";
+	// this->darkest_secret = "";
 }
 
-void	Contact::setContact(std::string first_name,
-							std::string last_name,
-							std::string nickname,
-							std::string phone_number,
-							std::string darkest_secret)
+void	Contact::setContact(std::string const first_name,
+							std::string const last_name,
+							std::string const nickname,
+							std::string const phone_number,
+							std::string const darkest_secret)
 {
-	this->first_name = first_name;
-	this->last_name = last_name;
-	this->nickname = nickname;
-	this->phone_number = phone_number;
-	this->darkest_secret = darkest_secret;
+	this->_first_name = first_name;
+	this->_last_name = last_name;
+	this->_nickname = nickname;
+	this->_phone_number = phone_number;
+	this->_darkest_secret = darkest_secret;
 }
 
-void	Contact::printContact()
+void	Contact::printContact() const
 {
-	std::cout << "First name : " << this->first_name << std::endl;
-	std::cout << "last name : " << this->last_name << std::endl;
-	std::cout << "Nickname : " << this->nickname << std::endl;
-	std::cout << "Phone number : " << this->phone_number << std::endl;
-	std::cout << "Darkest secret : " << this->darkest_secret << std::endl;
+	std::cout << "First name : " << this->_first_name << std::endl;
+	std::cout << "last name : " << this->_last_name << std::endl;
+	std::cout << "Nickname : " << this->_nickname << std::endl;
+	std::cout << "Phone number : " << this->_phone_number << std::endl;
+	std::cout << "Darkest secret : " << this->_darkest_secret << std::endl;
 }
 
 /*
@@ -52,29 +53,29 @@ Contact::~Contact()
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-std::string Contact::getFirstName()
+std::string Contact::getFirstName() const
 {
-	return this->first_name;
+	return this->_first_name;
 }
 
-std::string Contact::getLastName()
+std::string Contact::getLastName() const
 {
-	return this->last_name;
+	return this->_last_name;
 }
 
-std::string Contact::getNickname()
+std::string Contact::getNickname() const
 {
-	return this->nickname;
+	return this->_nickname;
 }
 
-std::string Contact::getPhoneNumber()
+std::string Contact::getPhoneNumber() const
 {
-	return this->phone_number;
+	return this->_phone_number;
 }
 
-std::string Contact::getDarkestSecret()
+std::string Contact::getDarkestSecret() const
 {
-	return this->darkest_secret;
+	return this->_darkest_secret;
 }
 
 /* ************************************************************************** */

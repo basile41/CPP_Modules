@@ -4,10 +4,9 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-PhoneBook::PhoneBook()
+PhoneBook::PhoneBook() : _id(0)
 {
 	std::cout << "New PhoneBook created" << std::endl;
-	id = 0;
 }
 
 
@@ -29,14 +28,14 @@ void	PhoneBook::addContact()
 	
 }
 
-void	PhoneBook::addContact(	std::string first_name,
-								std::string last_name,
-								std::string nickname,
-								std::string phone_number,
-								std::string darkest_secret)
+void	PhoneBook::addContact(	std::string const first_name,
+								std::string const last_name,
+								std::string const nickname,
+								std::string const phone_number,
+								std::string const darkest_secret)
 {
-	contact[id % PB_SIZE].setContact(first_name, last_name, nickname, phone_number, darkest_secret);
-	id++;
+	_contact[_id % PB_SIZE].setContact(first_name, last_name, nickname, phone_number, darkest_secret);
+	this->_id++;
 }
 
 static void	print_format(const std::string &str)
@@ -57,15 +56,15 @@ static void	print_format(const std::string &str)
 	}
 }
 
-void	PhoneBook::printPhoneBook()
+void	PhoneBook::printPhoneBook() const
 {
 	std::cout << "  Index   |First name|Last name | Nickname |" << std::endl;
-	for (size_t i = 0; i < 8 && i < id; i++)
+	for (size_t i = 0; i < 8 && i < _id; i++)
 	{
 		std::cout << "         " << i << "|";
-		print_format(this->contact[i].getFirstName());
-		print_format(this->contact[i].getLastName());
-		print_format(this->contact[i].getNickname());
+		print_format(this->_contact[i].getFirstName());
+		print_format(this->_contact[i].getLastName());
+		print_format(this->_contact[i].getNickname());
 		std::cout << std::endl;
 	}
 }
