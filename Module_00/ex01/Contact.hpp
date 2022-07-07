@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/07 12:03:24 by bregneau          #+#    #+#             */
+/*   Updated: 2022/07/07 12:03:26 by bregneau         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
@@ -11,12 +23,17 @@ class Contact
 
 		Contact();
 		~Contact();
+		void	printContact() const;
 		void	setContact(	std::string const first_name,
 							std::string const last_name,
-							std::string const nickname,
+							std::string const ,
 							std::string const phone_number,
 							std::string const darkest_secret);
-		void	printContact() const;
+		void setFirstName(std::string const first_name);
+		void setLastName(std::string const last_name);
+		void setNickname(std::string const nickname);
+		void setPhoneNumber(std::string const phone_number);
+		void setDarkestSecret(std::string const darkest_secret);
 		std::string getFirstName() const;
 		std::string getLastName() const;
 		std::string getNickname() const;
