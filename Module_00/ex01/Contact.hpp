@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 12:03:24 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/07 12:03:26 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/11 17:25:07 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ class Contact
 {
 
 	public:
-
 		Contact();
 		~Contact();
 		void	printContact() const;
@@ -39,7 +38,6 @@ class Contact
 		std::string getNickname() const;
 		std::string getPhoneNumber() const;
 		std::string getDarkestSecret() const;
-
 
 	private:
 		std::string _first_name;
