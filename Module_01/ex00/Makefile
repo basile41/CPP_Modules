@@ -6,7 +6,7 @@
 #    By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/13 13:16:41 by bregneau          #+#    #+#              #
-#    Updated: 2022/07/13 13:18:55 by bregneau         ###   ########.fr        #
+#    Updated: 2022/07/13 16:03:41 by bregneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,31 +14,42 @@ NAME			=	BraiiiiiiinnnzzzZ
 
 INC				=	-I .
 
+SRC_PATH		=	./
+OBJ_PATH		=	./obj/
+
+OBJ_DIRS		=	$(OBJ_PATH)
+
 SRC				=	main.cpp \
 					Zombie.cpp \
 					newZombie.cpp \
 					randomChump.cpp
 
-OBJ				=	$(SRC:.cpp=.o)
+OBJ				=	$(addprefix $(OBJ_PATH),$(SRC:.cpp=.o))
+DEPS			=	$(addprefix $(OBJ_PATH),$(SRC:.cpp=.d))
 
 CXX				=	c++
-CXXFLAGS		=	-Wall -Wextra -Werror -std=c++98 $(INC)
+CXXFLAGS		=	-MMD -Wall -Wextra -Werror -std=c++98
 
 all:				$(NAME)
 
-%.o:				%.cpp
-					$(CXX) $(CXXFLAGS) -c $< -o $@
+$(OBJ_DIRS):
+					@mkdir -p $(OBJ_DIRS)
+					
+$(OBJ_PATH)%.o:		$(SRC_PATH)%.cpp
+					$(CXX) $(CXXFLAGS) $(INC) -c $< -o $@
 
-$(NAME):			$(OBJ)
+$(NAME):			$(OBJ_DIRS) $(OBJ)
 					$(CXX) $(OBJ) -o $@
 
 clean:				
-					rm -rf $(OBJ)
+					rm -rf $(OBJ_PATH)
 
 fclean:				clean
 					rm -f $(NAME)
 
 re:					fclean
 					make all
+					
+-include			$(DEPS)
 
 .PHONY:				all clean fclean re
