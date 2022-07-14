@@ -6,11 +6,11 @@
 #    By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/13 20:05:31 by bregneau          #+#    #+#              #
-#    Updated: 2022/07/13 20:32:56 by bregneau         ###   ########.fr        #
+#    Updated: 2022/07/14 18:07:40 by bregneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	a.out
+NAME			=	replace
 
 INC				=	-I .
 
