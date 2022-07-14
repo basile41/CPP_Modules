@@ -6,11 +6,11 @@
 #    By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/14 18:24:49 by bregneau          #+#    #+#              #
-#    Updated: 2022/07/14 18:25:21 by bregneau         ###   ########.fr        #
+#    Updated: 2022/07/14 20:35:00 by bregneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	a.out
+NAME			=	Harl
 
 INC				=	-I .
 

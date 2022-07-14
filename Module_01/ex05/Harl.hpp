@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 18:37:04 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/14 19:15:46 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/14 20:23:23 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ class Harl
 		~Harl();
 		void	complain( std::string level );
 	private:
-		void	debug( void ) const;
-		void	info( void ) const;
-		void	warning( void ) const;
-		void	error( void ) const;
+		void	_debug( void ) const;
+		void	_info( void ) const;
+		void	_warning( void ) const;
+		void	_error( void ) const;
 };
 
 #endif
