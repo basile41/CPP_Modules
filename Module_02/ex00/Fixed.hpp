@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 15:05:00 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/15 15:05:01 by bregneau         ###   ########.fr       */
+/*   Created: 2022/07/15 15:31:49 by bregneau          #+#    #+#             */
+/*   Updated: 2022/07/15 15:31:52 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Fixed
 		// Constructors
 		Fixed();
 		Fixed(const Fixed &copy);
-		Fixed(int rawbits);
+		Fixed(int rawBits);
 		
 		// Destructor
 		~Fixed();
@@ -31,10 +31,11 @@ class Fixed
 		Fixed & operator=(const Fixed &assign);
 		
 		// Getters / Setters
-		int getRawbits() const;
+		int getRawBits() const;
+		void setRawBits(int rawBits);
 		
 	private:
-		int _rawbits;
+		int _rawBits;
 		
 };
 
