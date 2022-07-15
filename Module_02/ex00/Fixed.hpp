@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 15:31:49 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/15 15:31:52 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/15 16:13:18 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ class Fixed
 		
 	private:
 		int _rawBits;
+		
+		static int const _fBits;
 		
 };
 

@@ -6,11 +6,13 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 15:31:46 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/15 15:49:59 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/15 16:13:05 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+int const Fixed::_fBits = 8;
 
 // Constructors
 Fixed::Fixed()
