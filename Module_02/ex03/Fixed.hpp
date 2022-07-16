@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 15:31:49 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/16 15:51:29 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/16 17:19:30 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ class Fixed
 		
 		// Operators
 		Fixed &	operator=( const Fixed &rhs );
-		Fixed 	operator++( void );
+		Fixed &	operator++( void );
 		Fixed 	operator++( int );
-		Fixed 	operator--( void );
+		Fixed &	operator--( void );
 		Fixed 	operator--( int );
 		Fixed	operator+( const Fixed &rhs ) const;
 		Fixed	operator-( const Fixed &rhs ) const;

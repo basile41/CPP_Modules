@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 15:31:46 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/16 16:24:11 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/16 17:24:25 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,9 @@ Fixed & Fixed::operator=(const Fixed &rhs)
 	return *this;
 }
 
-Fixed 	Fixed::operator++( void )
+Fixed &	Fixed::operator++( void )
 {
-	Fixed tmp(*this);
-	tmp.setRawBits(++_rawBits);
-	return (tmp);
+	return (++(*this));
 }
 Fixed 	Fixed::operator++( int )
 {
@@ -66,11 +64,9 @@ Fixed 	Fixed::operator++( int )
 	tmp.setRawBits(_rawBits++);
 	return (tmp);
 }
-Fixed 	Fixed::operator--( void )
+Fixed &	Fixed::operator--( void )
 {
-	Fixed tmp(*this);
-	tmp.setRawBits(--_rawBits);
-	return (tmp);
+	return (--(*this));
 }
 Fixed 	Fixed::operator--( int )
 {
@@ -122,7 +118,7 @@ bool	Fixed::operator!=( const Fixed &rhs ) const
 }
 
 
-// Methods
+		// Methods
 Fixed 	Fixed::min( Fixed &f1, Fixed &f2)
 {
 	if (f1 <= f2)
