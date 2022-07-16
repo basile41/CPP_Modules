@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 15:31:49 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/15 20:16:58 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/16 15:51:29 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,16 @@ class Fixed
 		bool	operator==( const Fixed &rhs ) const;
 		bool	operator!=( const Fixed &rhs ) const;
 
-		
+		// Methods
+		static Fixed	min( Fixed &f1, Fixed &f2);
+		static Fixed	min( Fixed const &f1, Fixed const &f2);
+		static Fixed	max( Fixed &f1, Fixed &f2);
+		static Fixed	max( Fixed const &f1, Fixed const &f2);
 		
 		
 		// Getters / Setters
 		int		getRawBits() const;
-		void	setRawBits(int rawBits);
+		void	setRawBits( int rawBits );
 
 		float	toFloat() const;
 		int		toInt() const;

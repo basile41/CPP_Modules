@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 15:31:46 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/15 20:40:21 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/16 16:24:11 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,11 +81,11 @@ Fixed 	Fixed::operator--( int )
 
 Fixed	Fixed::operator+( const Fixed &rhs ) const
 {
-	return (Fixed(_rawBits + rhs._rawBits));
+	return (Fixed(this->toFloat() + rhs.toFloat()));
 }
 Fixed	Fixed::operator-( const Fixed &rhs ) const
 {
-	return (Fixed(_rawBits - rhs._rawBits));
+	return (Fixed(this->toFloat() - rhs.toFloat()));
 }
 Fixed	Fixed::operator*( const Fixed &rhs ) const
 {
@@ -95,7 +95,6 @@ Fixed	Fixed::operator/( const Fixed &rhs ) const
 {
 	return (Fixed(this->toFloat() / rhs.toFloat()));
 }
-
 
 bool	Fixed::operator>( const Fixed &rhs ) const
 {
@@ -121,6 +120,34 @@ bool	Fixed::operator!=( const Fixed &rhs ) const
 {
 	return (_rawBits != rhs._rawBits);
 }
+
+
+// Methods
+Fixed 	Fixed::min( Fixed &f1, Fixed &f2)
+{
+	if (f1 <= f2)
+		return (f1);
+	return (f2);
+}
+Fixed 	Fixed::min( Fixed const &f1, Fixed const &f2)
+{
+	if (f1 <= f2)
+		return (f1);
+	return (f2);
+}
+Fixed 	Fixed::max( Fixed &f1, Fixed &f2)
+{
+	if (f1 >= f2)
+		return (f1);
+	return (f2);
+}
+Fixed 	Fixed::max( Fixed const &f1, Fixed const &f2)
+{
+	if (f1 >= f2)
+		return (f1);
+	return (f2);
+}
+
 
 // Getters / Setters
 int		Fixed::getRawBits() const
