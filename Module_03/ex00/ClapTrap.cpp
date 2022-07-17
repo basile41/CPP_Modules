@@ -12,7 +12,7 @@ ClapTrap::ClapTrap(const ClapTrap &copy)
 	std::cout << "\e[0;33mCopy Constructor called\e[0m" << std::endl;
 }
 ClapTrap::ClapTrap(std::string name)
-: _name(name)
+: _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	std::cout << "\e[0;33mFields Constructor called\e[0m" << std::endl;
 }
@@ -76,10 +76,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	std::cout << _name << " is repaired and gain " << amount << " HP !" << std::endl;
 }
 
-
-// Stream operators
-std::ostream &	operator<<(std::ostream &os, const ClapTrap &claptrap)
+void	ClapTrap::printInfos(void) const
 {
-	os << claptrap.getName();
-	return (os);
+	std::cout << _name << " : " << _hitPoints << " HP, " << _energyPoints << " EP, " << _attackDamage << " AD" << std::endl;
 }

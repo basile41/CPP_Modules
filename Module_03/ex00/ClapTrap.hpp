@@ -26,9 +26,10 @@ class ClapTrap
 		int getAttackDamage() const;
 
 		// Methods
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
+		void	attack(const std::string& target);
+		void	takeDamage(unsigned int amount);
+		void	beRepaired(unsigned int amount);
+		void	printInfos(void) const;
 		
 	private:
 		std::string _name;
@@ -38,7 +39,5 @@ class ClapTrap
 		
 };
 
-// Stream operators
-std::ostream &operator<<(std::ostream &os, const ClapTrap &claptrap);
 
 #endif

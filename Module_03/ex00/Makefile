@@ -6,7 +6,7 @@
 #    By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/17 14:08:58 by bregneau          #+#    #+#              #
-#    Updated: 2022/07/17 14:09:00 by bregneau         ###   ########.fr        #
+#    Updated: 2022/07/17 20:27:56 by bregneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,7 @@ OBJ_PATH		=	./obj/
 OBJ_DIRS		=	$(OBJ_PATH)
 
 SRC				=	main.cpp \
-					Fixed.cpp \
-					Point.cpp \
-					bsp.cpp
+					ClapTrap.cpp
 
 OBJ				=	$(addprefix $(OBJ_PATH),$(SRC:.cpp=.o))
 DEPS			=	$(addprefix $(OBJ_PATH),$(SRC:.cpp=.d))
