@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 11:42:27 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/18 12:12:10 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/18 13:42:09 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,13 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	if (_hitPoints <= 0)
 		return ;
 	_hitPoints -= amount;
-	std::cout << _name << " loses " << amount << " HP !" << std::endl;
+	if (_hitPoints <= 0)
+	{
+		std::cout << _name << " died !" << std::endl;
+		_hitPoints = 0;
+	}
+	else
+		std::cout << _name << " loses " << amount << " HP !" << std::endl;
 }
 void	ClapTrap::beRepaired(unsigned int amount)
 {
