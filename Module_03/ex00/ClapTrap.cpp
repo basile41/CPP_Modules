@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/18 11:42:27 by bregneau          #+#    #+#             */
+/*   Updated: 2022/07/18 12:12:10 by bregneau         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
 
 // Constructors
@@ -61,22 +73,43 @@ int			ClapTrap::getAttackDamage() const
 // Methods
 void	ClapTrap::attack(const std::string& target)
 {
-	_energyPoints--;
-	std::cout << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage !" << std::endl;
+	if (_hitPoints <= 0)
+		return ;
+	if (_energyPoints >= 1)
+	{
+		std::cout	<< _name << " attacks " << target << ", causing "
+					<< _attackDamage << " points of damage !" << std::endl;
+		_energyPoints--;
+	}
+	else
+		std::cout	<< _name << " tries to attack " << target
+					<< " but don't have enough energy !" << std::endl;
 }
 void	ClapTrap::takeDamage(unsigned int amount)
 {
+	if (_hitPoints <= 0)
+		return ;
 	_hitPoints -= amount;
 	std::cout << _name << " loses " << amount << " HP !" << std::endl;
 }
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	_energyPoints--;
-	_hitPoints += amount;
-	std::cout << _name << " is repaired and gain " << amount << " HP !" << std::endl;
+	if (_hitPoints <= 0)
+		return ;
+	if (_energyPoints >= 1)
+	{
+		std::cout	<< _name << " repairs itself and restores "
+					<< amount << " HP !" << std::endl;
+		_energyPoints--;
+		_hitPoints += amount;
+	}
+	else
+		std::cout	<< _name << " tries to repair itself but don't have enough energy !" << std::endl;
+	
 }
 
 void	ClapTrap::printInfos(void) const
 {
-	std::cout << _name << " : " << _hitPoints << " HP, " << _energyPoints << " EP, " << _attackDamage << " AD" << std::endl;
+	std::cout	<< _name << " : " << _hitPoints << " HP, " << _energyPoints << " EP, "
+				<< _attackDamage << " AD" << std::endl;
 }
