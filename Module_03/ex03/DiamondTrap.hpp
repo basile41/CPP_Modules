@@ -20,12 +20,12 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		
 		// Operators
 		DiamondTrap & operator=(const DiamondTrap &assign);
-		
-		// Getters / Setters
+
+		void whoAmI();
 		
 	private:
 		std::string _name;
-		
+		using ScavTrap::_energyPoints;
 };
 
 #endif

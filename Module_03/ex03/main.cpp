@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 20:45:43 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/18 19:44:27 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/21 16:05:47 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,30 +17,16 @@
 
 int main()
 {
-	ScavTrap	unnamed;
-	ScavTrap	scavtrap("Scav");
-	ScavTrap	scavtrap_bis(scavtrap);
-	FragTrap	fragtrap("Frag");
-	DiamondTrap	diamond("diamond");
+	DiamondTrap d;	
+	DiamondTrap d2(d);
+	DiamondTrap	diamond("test");
 
-	scavtrap.attack("a zombie");
-	scavtrap.takeDamage(5);
-	scavtrap.printInfos();
-	scavtrap.beRepaired(1);
-	scavtrap.printInfos();
-	scavtrap.takeDamage(8);
-	scavtrap.attack("a zombie");
-	scavtrap.beRepaired(1);
-	scavtrap.guardGate();
+	d.whoAmI();
+	d2.whoAmI();
+	diamond.whoAmI();
 
-	fragtrap.attack("a zombie");
-	fragtrap.takeDamage(5);
-	fragtrap.printInfos();
-	fragtrap.beRepaired(1);
-	fragtrap.printInfos();
-	fragtrap.takeDamage(8);
-	fragtrap.attack("a zombie");
-	fragtrap.beRepaired(1);
-	fragtrap.highFivesGuys();
+	diamond.attack("a zombie");
+	diamond.takeDamage(10);
+	diamond.beRepaired(5);
 	diamond.printInfos();
 }

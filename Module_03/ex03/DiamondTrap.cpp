@@ -2,10 +2,10 @@
 
 // Constructors
 DiamondTrap::DiamondTrap()
-: ScavTrap(), FragTrap()
+: _name("diamond")
 {
-	_name = "diamondtrap";
-	_hitPoints = FragTrap::_hitPoints;
+	ClapTrap::_name = _name + "_clap_name";
+	_energyPoints = 50;
 	std::cout << "\e[0;33mDefault Constructor called (DiamondTrap)\e[0m" << std::endl;
 }
 
@@ -16,8 +16,10 @@ DiamondTrap::DiamondTrap(const DiamondTrap &copy)
 }
 
 DiamondTrap::DiamondTrap(std::string name)
+: _name(name)
 {
-	_name = name;
+	ClapTrap::_name = _name + "_clap_name";
+	_energyPoints = 50;
 	std::cout << "\e[0;33mFields Constructor called (DiamondTrap)\e[0m" << std::endl;
 }
 
@@ -40,4 +42,8 @@ DiamondTrap & DiamondTrap::operator=(const DiamondTrap &assign)
 }
 
 
-// Getters / Setters
+void DiamondTrap::whoAmI()
+{
+	std::cout	<< "name : " << _name << std::endl
+				<< "clap name :" << ClapTrap::_name << std::endl;
+}
