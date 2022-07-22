@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 18:46:39 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/21 18:51:12 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/22 13:47:50 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class WrongCat : public WrongAnimal
 		WrongCat(const WrongCat &copy);
 		
 		// Destructor
-		virtual ~WrongCat();
+		~WrongCat();
 		
 		// Operators
 		WrongCat & operator=(const WrongCat &assign);
