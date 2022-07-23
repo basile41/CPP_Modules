@@ -6,7 +6,7 @@
 #    By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/17 14:08:58 by bregneau          #+#    #+#              #
-#    Updated: 2022/07/22 13:21:04 by bregneau         ###   ########.fr        #
+#    Updated: 2022/07/23 12:34:56 by bregneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,7 @@ SRC				=	main.cpp \
 					Animal.cpp \
 					Dog.cpp \
 					Cat.cpp \
-					WrongAnimal.cpp \
-					WrongCat.cpp 
+					Brain.cpp
 
 OBJ				=	$(addprefix $(OBJ_PATH),$(SRC:.cpp=.o))
 DEPS			=	$(addprefix $(OBJ_PATH),$(SRC:.cpp=.d))

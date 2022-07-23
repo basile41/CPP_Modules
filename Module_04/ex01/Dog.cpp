@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 16:54:18 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/23 12:24:58 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/23 17:31:58 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,9 @@ Dog & Dog::operator=(const Dog &assign)
 void	Dog::makeSound() const
 {
 	std::cout << "OUAF !!" << std::endl;
+}
+
+Brain	*Dog::getBrain() const
+{
+	return (_brain);
 }

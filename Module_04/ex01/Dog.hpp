@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 16:54:24 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/23 12:15:09 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/23 17:31:51 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ class Dog : public Animal
 
 		// Methods
 		void	makeSound() const;
+		Brain	*getBrain() const;
 		
 	private:
 		Brain	*_brain;
