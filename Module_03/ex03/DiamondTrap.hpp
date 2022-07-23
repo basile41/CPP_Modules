@@ -25,7 +25,6 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		
 	private:
 		std::string _name;
-		using ScavTrap::_energyPoints;
 };
 
 #endif
