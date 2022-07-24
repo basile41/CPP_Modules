@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 18:19:29 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/24 19:32:58 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/24 21:38:30 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 // Constructors
 Character::Character()
 {
-
 }
 
 Character::Character(const Character &copy)
@@ -24,17 +23,18 @@ Character::Character(const Character &copy)
 }
 
 Character::Character(std::string name)
-: _name(name), _inventory({0})
-{}
+: _name(name)
+{
+	for (int i = 0; i < 4; i++)
+		_inventory[i] = 0;
+}
 
 
 // Destructor
 Character::~Character()
 {
 	for (int i = 0; i < 4; i++)
-	{
 		delete _inventory[i];
-	}
 }
 
 
@@ -45,6 +45,7 @@ Character & Character::operator=(const Character &assign)
 	for (int i = 0; i < 4; i++)
 	{
 		delete _inventory[i];
+		_inventory[i] = NULL;
 		if (assign._inventory[i])
 			_inventory[i] = assign._inventory[i]->clone();
 	}
@@ -53,12 +54,13 @@ Character & Character::operator=(const Character &assign)
 
 
 // Getters / Setters
-
 std::string const & Character::getName() const
 {
 	return _name;
 }
 
+
+// Methods
 void Character::equip(AMateria* m)
 {
 	for (int i = 0; i < 4; i++)

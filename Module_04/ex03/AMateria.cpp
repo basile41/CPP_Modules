@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 17:45:43 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/24 17:46:07 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/24 21:48:27 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,11 @@ AMateria & AMateria::operator=(const AMateria &assign)
 std::string const & AMateria::getType() const
 {
 	return _type;
+}
+
+
+
+void	AMateria::use(ICharacter& target)
+{
+	std::cout << "* use " << _type << " on " << target.getName() << " *" << std::endl;
 }

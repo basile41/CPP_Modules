@@ -6,7 +6,7 @@
 #    By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/17 14:08:58 by bregneau          #+#    #+#              #
-#    Updated: 2022/07/24 14:35:40 by bregneau         ###   ########.fr        #
+#    Updated: 2022/07/24 21:02:56 by bregneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJ_PATH		=	./obj/
 OBJ_DIRS		=	$(OBJ_PATH)
 
 SRC				=	main.cpp \
-					Amateria.cpp \
+					AMateria.cpp \
 					Ice.cpp \
 					Cure.cpp \
 					Character.cpp

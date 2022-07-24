@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 14:10:15 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/24 14:10:17 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/24 20:38:27 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,26 @@
 # include <iostream>
 # include <string>
 
-# include "Amateria.hpp"
+# include "AMateria.hpp"
 
-class Ice : public Amateria
+class Ice : public AMateria
 {
 	public:
 		// Constructors
+		Ice();
 		Ice(const Ice &copy);
-		Ice(std::string name);
 		
 		// Destructor
 		~Ice();
 		
 		// Operators
 		Ice & operator=(const Ice &assign);
-		
-		// Getters / Setters
-		std::string const & getName() const;
+
+		// Methods
+		AMateria	*clone() const;
+		void		use(ICharacter& target);
 		
 	private:
-		Ice();
-		std::string _name;
 		
 };
 
