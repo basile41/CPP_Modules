@@ -1,43 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 14:10:15 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/24 14:10:17 by bregneau         ###   ########.fr       */
+/*   Created: 2022/07/24 14:10:03 by bregneau          #+#    #+#             */
+/*   Updated: 2022/07/24 18:17:13 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
+#ifndef ICHARACTER_HPP
+# define ICHARACTER_HPP
 
 # include <iostream>
 # include <string>
 
-# include "Amateria.hpp"
+# include "AMateria.hpp"
 
-class Ice : public Amateria
+class ICharacter
 {
 	public:
-		// Constructors
-		Ice(const Ice &copy);
-		Ice(std::string name);
-		
-		// Destructor
-		~Ice();
-		
-		// Operators
-		Ice & operator=(const Ice &assign);
-		
-		// Getters / Setters
-		std::string const & getName() const;
-		
-	private:
-		Ice();
-		std::string _name;
-		
+		virtual ~ICharacter() {}
+		virtual std::string const & getName() const = 0;
+		virtual void equip(AMateria* m) = 0;
+		virtual void unequip(int idx) = 0;
+		virtual void use(int idx, ICharacter& target) = 0;
 };
 
 #endif

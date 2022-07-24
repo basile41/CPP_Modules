@@ -6,7 +6,7 @@
 #    By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/17 14:08:58 by bregneau          #+#    #+#              #
-#    Updated: 2022/07/23 22:30:21 by bregneau         ###   ########.fr        #
+#    Updated: 2022/07/24 14:35:40 by bregneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,9 @@ OBJ_DIRS		=	$(OBJ_PATH)
 
 SRC				=	main.cpp \
 					Amateria.cpp \
-					ICharacter.cpp
+					Ice.cpp \
+					Cure.cpp \
+					Character.cpp
 
 OBJ				=	$(addprefix $(OBJ_PATH),$(SRC:.cpp=.o))
 DEPS			=	$(addprefix $(OBJ_PATH),$(SRC:.cpp=.d))

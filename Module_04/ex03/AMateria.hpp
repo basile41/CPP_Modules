@@ -1,42 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   Amateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 14:10:15 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/24 14:10:17 by bregneau         ###   ########.fr       */
+/*   Created: 2022/07/24 14:10:18 by bregneau          #+#    #+#             */
+/*   Updated: 2022/07/24 17:44:57 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
 
 # include <iostream>
 # include <string>
 
-# include "Amateria.hpp"
+# include "ICharacter.hpp"
 
-class Ice : public Amateria
+class AMateria
 {
 	public:
 		// Constructors
-		Ice(const Ice &copy);
-		Ice(std::string name);
+		AMateria();
+		AMateria(std::string type);
+		AMateria(const AMateria &copy);
 		
 		// Destructor
-		~Ice();
+		~AMateria();
 		
 		// Operators
-		Ice & operator=(const Ice &assign);
+		AMateria & operator=(const AMateria &assign);
 		
 		// Getters / Setters
-		std::string const & getName() const;
+		std::string const &	getType() const;
 		
+		// Methods
+		virtual AMateria	*clone() const = 0;
+		virtual void		use(ICharacter& target);
+
+	protected:
+		std::string _type;
+
 	private:
-		Ice();
-		std::string _name;
 		
 };
 

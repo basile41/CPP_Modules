@@ -1,42 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 14:10:15 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/24 14:10:17 by bregneau         ###   ########.fr       */
+/*   Created: 2022/07/24 18:19:24 by bregneau          #+#    #+#             */
+/*   Updated: 2022/07/24 18:52:30 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 
 # include <iostream>
 # include <string>
 
-# include "Amateria.hpp"
+# include "AMateria.hpp"
 
-class Ice : public Amateria
+class Character : public ICharacter
 {
 	public:
 		// Constructors
-		Ice(const Ice &copy);
-		Ice(std::string name);
+		Character(const Character &copy);
+		Character(std::string name);
 		
 		// Destructor
-		~Ice();
+		~Character();
 		
+
 		// Operators
-		Ice & operator=(const Ice &assign);
+		Character & operator=(const Character &assign);
 		
 		// Getters / Setters
 		std::string const & getName() const;
+
+		void equip(AMateria* m);
+		void unequip(int idx);
+		void use(int idx, ICharacter& target);
 		
 	private:
-		Ice();
-		std::string _name;
+		Character();
+		std::string	_name;
+		AMateria	*_inventory[4];
 		
 };
 
