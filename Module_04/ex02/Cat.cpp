@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 16:54:16 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/23 22:00:03 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/24 17:58:41 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,9 @@ Cat & Cat::operator=(const Cat &assign)
 void	Cat::makeSound() const
 {
 	std::cout << "Miaou !" << std::endl;
+}
+
+Brain	*Cat::getBrain() const
+{
+	return (_brain);
 }

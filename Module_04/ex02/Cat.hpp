@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 16:54:25 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/23 21:57:17 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/24 17:58:05 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ class Cat : public AAnimal
 		
 		// Methods
 		void	makeSound() const;
+		Brain	*getBrain() const;
 		
 	private:
 		Brain	*_brain;
