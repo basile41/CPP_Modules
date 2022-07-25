@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 16:36:40 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/25 16:49:55 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/25 18:28:37 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 */
 
 Bureaucrat::Bureaucrat()
+: _name("unnamed"), _grade(150)
 {
 }
 

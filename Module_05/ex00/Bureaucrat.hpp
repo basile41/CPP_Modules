@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 16:36:37 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/25 16:39:19 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/25 18:27:43 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Bureaucrat
 {
 
 	public:
+		Bureaucrat();
 		Bureaucrat(std::string name, int grade);
 		Bureaucrat( Bureaucrat const & src );
 		~Bureaucrat();
@@ -42,7 +43,6 @@ class Bureaucrat
 		void	downgrade();
 		
 	private:
-		Bureaucrat();
 		std::string _name;
 		int			_grade;
 };
