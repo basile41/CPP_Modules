@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 18:19:29 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/24 21:38:30 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/25 12:15:13 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ Character::Character()
 
 Character::Character(const Character &copy)
 {
+	for (int i = 0; i < 4; i++)
+		_inventory[i] = 0;
 	*this = copy;
 }
 
@@ -82,5 +84,8 @@ void Character::unequip(int idx)
 void Character::use(int idx, ICharacter& target)
 {
 	if (idx >= 0 && idx < 4 && _inventory[idx])
+	{
+		std::cout << _name << " : ";
 		_inventory[idx]->use(target);
+	}
 }
