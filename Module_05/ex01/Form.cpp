@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 18:06:30 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/25 18:52:07 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/25 20:11:03 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Form::Form()
 {
 }
 
-Form::Form(std::string name, int gradeToSign = 150, int gradeToExec = 150)
+Form::Form(std::string name, int gradeToSign, int gradeToExec)
 : _name(name), _sign(false), _gradeToSign(gradeToSign), _gradeToExec(gradeToExec)
 {
 	if (_gradeToSign > 150 || _gradeToExec > 150)
@@ -56,9 +56,11 @@ Form &				Form::operator=( Form const & rhs )
 	return *this;
 }
 
-std::ostream &		operator<<( std::ostream & o, Form const & i )
+std::ostream &		operator<<( std::ostream & o, Form const & f )
 {
-	//o << "Value = " << i.getValue();
+	o	<< f.getName() << ", " << (f.getSign() ? "signed" : "not signed")
+		<< ", grade to sign : " << f.getGradeToSign()
+		<< ", grade to execute : " << f.getGradeToExec();
 	return o;
 }
 
@@ -67,10 +69,42 @@ std::ostream &		operator<<( std::ostream & o, Form const & i )
 ** --------------------------------- METHODS ----------------------------------
 */
 
+void	Form::beSigned(const Bureaucrat &b)
+{
+	if (b.getGrade() > _gradeToSign)
+		throw GradeTooLowException();
+	else
+		_sign = true;
+}
+
+const char*	Form::GradeTooHighException::what() const throw()
+{
+	return "Grade too high !";
+}
+const char*	Form::GradeTooLowException::what() const throw()
+{
+	return "Grade too low !";
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
+const std::string &	Form::getName() const
+{
+	return _name;
+}
+bool				Form::getSign() const
+{
+	return _sign;
+}
+int					Form::getGradeToSign() const
+{
+	return _gradeToSign;
+}
+int					Form::getGradeToExec() const
+{
+	return _gradeToExec;
+}
 
 /* ************************************************************************** */

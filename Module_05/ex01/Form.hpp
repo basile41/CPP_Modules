@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 18:06:28 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/25 18:48:15 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/25 19:17:24 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 # include <iostream>
 # include <string>
+
+# include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {
@@ -37,12 +41,12 @@ class Form
 
 		Form &		operator=( Form const & rhs );
 
-		std::string	getName() const;
-		bool		getSign() const;
-		int			getGradeToSign() const;
-		int			getGradeToExec() const;
+		const std::string &	getName() const;
+		bool				getSign() const;
+		int					getGradeToSign() const;
+		int					getGradeToExec() const;
 
-		void		beSigned();
+		void	beSigned(const Bureaucrat &b);
 
 	private:
 		const std::string	_name;
