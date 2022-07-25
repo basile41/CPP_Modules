@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 18:19:29 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/25 13:49:04 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/25 14:08:07 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void Character::use(int idx, ICharacter& target)
 {
 	if (idx >= 0 && idx < 4 && _inventory[idx])
 	{
-		std::cout << _name << " : ";
+		// std::cout << _name << " : ";
 		_inventory[idx]->use(target);
 	}
 }
