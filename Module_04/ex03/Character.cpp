@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 18:19:29 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/25 12:15:13 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/25 13:49:04 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,14 @@ std::string const & Character::getName() const
 {
 	return _name;
 }
+
+AMateria*			Character::getMateria(int idx) const
+{
+	if (idx >= 0 && idx < 4)
+		return _inventory[idx];
+	return 0;
+}
+
 
 
 // Methods

@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 18:19:24 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/25 12:20:27 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/25 12:24:23 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ class Character : public ICharacter
 		
 		// Getters / Setters
 		std::string const & getName() const;
+		AMateria*			getMateria(int idx) const;
 
 		// Methods
 		void equip(AMateria* m);

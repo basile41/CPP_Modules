@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 22:10:36 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/25 12:19:47 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/25 13:52:38 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ int main()
 	toto.use(0, bob);
 	toto.use(1, bob);
 	Character _toto(toto);
-	_toto.use(0, bob);
-
+	_toto.equip(toto.getMateria(0));
+	toto.unequip(0);
+	_toto.use(2, bob);
 	return 0;
 }
