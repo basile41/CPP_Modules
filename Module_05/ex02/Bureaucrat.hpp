@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 16:36:37 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/25 19:35:04 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/26 14:36:35 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 # include <iostream>
 # include <string>
 
-# include "Form.hpp"
+# include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -45,7 +45,8 @@ class Bureaucrat
 
 		void	upgrade();
 		void	downgrade();
-		void	signForm(Form &form) const;
+		void	signForm(AForm &form) const;
+		void	executeForm(AForm &form) const;
 		
 	private:
 		const std::string	_name;

@@ -6,7 +6,7 @@
 #    By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/17 14:08:58 by bregneau          #+#    #+#              #
-#    Updated: 2022/07/25 18:04:04 by bregneau         ###   ########.fr        #
+#    Updated: 2022/07/26 15:05:48 by bregneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,10 @@ OBJ_DIRS		=	$(OBJ_PATH)
 
 SRC				=	main.cpp \
 					Bureaucrat.cpp \
-					Form.cpp
+					AForm.cpp \
+					ShrubberyCreationForm.cpp \
+					RobotomyRequestForm.cpp \
+					PresidentialPardonForm.cpp
 
 OBJ				=	$(addprefix $(OBJ_PATH),$(SRC:.cpp=.o))
 DEPS			=	$(addprefix $(OBJ_PATH),$(SRC:.cpp=.d))

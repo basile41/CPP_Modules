@@ -1,43 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/26 15:06:10 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/26 15:27:51 by bregneau         ###   ########.fr       */
+/*   Created: 2022/07/26 15:09:35 by bregneau          #+#    #+#             */
+/*   Updated: 2022/07/26 15:10:20 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-# define SHRUBBERYCREATIONFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+# define PRESIDENTIALPARDONFORM_HPP
 
 # include <iostream>
 # include <string>
-# include <fstream>
 
 # include "AForm.hpp"
 
-class ShrubberyCreationForm : public AForm
+class PresidentialPardonForm : public AForm
 {
 
 	public:
 
-		ShrubberyCreationForm(const std::string &target);
-		ShrubberyCreationForm( ShrubberyCreationForm const & src );
-		~ShrubberyCreationForm();
+		PresidentialPardonForm(const std::string &target);
+		PresidentialPardonForm( PresidentialPardonForm const & src );
+		~PresidentialPardonForm();
 
-		ShrubberyCreationForm &		operator=( ShrubberyCreationForm const & rhs );
+		PresidentialPardonForm &		operator=( PresidentialPardonForm const & rhs );
 
 		void	execute(Bureaucrat const & executor) const;
 
 	private:
-		ShrubberyCreationForm();
+		PresidentialPardonForm();
 		const std::string	_target;
 
 };
 
-std::ostream &			operator<<( std::ostream & o, ShrubberyCreationForm const & i );
+std::ostream &			operator<<( std::ostream & o, PresidentialPardonForm const & i );
 
-#endif /* ******************************************* SHRUBBERYCREATIONFORM_H */
+#endif /* ****************************************** PRESIDENTIALPARDONFORM_H */

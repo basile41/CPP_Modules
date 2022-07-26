@@ -16,7 +16,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-AForm::AForm() : AForm("unamed")
+AForm::AForm() : _gradeToSign(150), _gradeToExec(150)
 {
 }
 

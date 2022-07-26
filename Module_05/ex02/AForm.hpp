@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 20:37:39 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/25 21:50:22 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/26 12:11:57 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class AForm
 
 	public:
 
-		AForm();
 		AForm(const std::string &name, int gradeToSign = 150, int gradeToExec = 150);
 		AForm( AForm const & src );
 		virtual ~AForm();
@@ -54,6 +53,7 @@ class AForm
 		virtual void	execute(Bureaucrat const & executor) const = 0;
 
 	private:
+		AForm();
 		const std::string	_name;
 		bool				_sign;
 		const int			_gradeToSign;

@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 16:36:40 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/25 20:23:36 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/26 14:45:03 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	Bureaucrat::downgrade()
 		throw (GradeTooLowException());
 }
 
-void	Bureaucrat::signForm(Form &form) const
+void	Bureaucrat::signForm(AForm &form) const
 {
 	try
 	{
@@ -89,8 +89,19 @@ void	Bureaucrat::signForm(Form &form) const
 	{
 		std::cout << _name << " couldn't sign " << form.getName() << " because : " << e.what() << std::endl;
 	}
-	
-	form.beSigned(*this);
+}
+
+void	Bureaucrat::executeForm(AForm &form) const
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << _name << " executed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << _name << " couldn't execute " << form.getName() << " because : " << e.what() << std::endl;
+	}
 }
 
 const char*	Bureaucrat::GradeTooHighException::what() const throw()
