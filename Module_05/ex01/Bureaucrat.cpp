@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 16:36:40 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/25 20:23:36 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/26 14:38:01 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,6 @@ void	Bureaucrat::signForm(Form &form) const
 	{
 		std::cout << _name << " couldn't sign " << form.getName() << " because : " << e.what() << std::endl;
 	}
-	
-	form.beSigned(*this);
 }
 
 const char*	Bureaucrat::GradeTooHighException::what() const throw()
