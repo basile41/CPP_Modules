@@ -19,14 +19,12 @@ class Intern
 
 		Intern &		operator=( Intern const & rhs );
 
-		AForm *			makeForm(std::string name, std::string target) const;
+		AForm *			makeForm(std::string const &name, std::string const &targett) const;
 
 
 
 	private:
 
 };
-
-std::ostream &			operator<<( std::ostream & o, Intern const & i );
 
 #endif /* ********************************************************** INTERN_H */
