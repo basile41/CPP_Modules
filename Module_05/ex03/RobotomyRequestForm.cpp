@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 15:06:32 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/26 18:44:13 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/27 13:36:18 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 	srand(time(NULL));
 	std::cout << "* Drilling noises ! *" << std::endl;
 	if (std::rand() % 2)
-		std::cout << executor.getName() << " has been successfully robotomized !" << std::endl;
+		std::cout << _target << " has been successfully robotomized !" << std::endl;
 	else
 		std::cout << "Robotomy failed !" << std::endl;
 		
