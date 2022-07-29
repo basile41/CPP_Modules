@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 21:06:05 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/29 00:20:59 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/29 15:03:32 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #include <string>
 #include <cstdlib>
 #include <limits>
+
+#define INT_MAX std::numeric_limits<int>::max()
+#define INT_MIN std::numeric_limits<int>::min()
 
 typedef struct s_types
 {
@@ -36,13 +39,15 @@ bool	ft_is_int(std::string const &s)
 	std::string str(s);
 	if (s[0] == '-' || s[1] == '+')
 		str.erase(0, 1);
-	if (str.empty())
+	if (str.empty() || str.size() > 10)
 		return false;
 	for (size_t i = 0; i < str.size(); i++)
 	{
 		if (!isdigit(str[i]))
 			return false;
 	}
+	if (atol(s.c_str()) > INT_MAX || atol(s.c_str()) < INT_MIN)
+		return false;
 	return true;
 }
 
@@ -156,7 +161,6 @@ int main(int argc, char **argv)
 		return 1; 
 	}
 	std::string arg(argv[1]);
-
 
 	ft_convert_type(arg);
 
