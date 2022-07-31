@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 14:01:45 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/31 22:08:06 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/31 22:14:29 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ int main()
 {
 	srand(time(NULL));
 	Base *	base = generate();
-	// Base *	base = NULL;
 
 	identify(base);
 	identify(*base);
