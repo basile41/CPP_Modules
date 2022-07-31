@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 21:06:05 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/29 23:13:30 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/31 21:17:40 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <cstdlib>
 #include <limits>
 #include <sstream>
+#include <iomanip>
 
 #define INT_MAX std::numeric_limits<int>::max()
 #define INT_MIN std::numeric_limits<int>::min()
@@ -137,8 +138,15 @@ void	ft_print_types(t_types *t)
 	else
 		std::cout << t->i << "\n";
 
-	std::cout	<< "float: " << static_cast<float>(t->f) << "\n"
-				<< "double: " << t->d << std::endl;
+	std::cout.precision(std::numeric_limits<float>::digits10 + 1);
+	if (t->f == static_cast<float>(static_cast<long>(t->f)))
+		std::cout << std::fixed << std::setprecision(1);
+	std::cout << "float: " << t->f << "f" << "\n";
+
+	std::cout.precision(std::numeric_limits<double>::digits10);
+	if (t->d == static_cast<double>(static_cast<long>(t->d)))
+		std::cout << std::fixed << std::setprecision(1);
+	std::cout << "double: " << t->d << std::endl;
 }
 
 void	ft_cast_char(std::string const &s, t_types *t)
