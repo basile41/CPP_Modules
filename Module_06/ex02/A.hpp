@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 15:03:32 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/31 22:06:43 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/07/31 21:38:18 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASE_HPP
-# define BASE_HPP
+#ifndef A_HPP
+# define A_HPP
 
-class Base
-{
-	public:
-		virtual ~Base();
-};
+# include "Base.hpp"
+
+class A : public Base{};
 
 #endif
