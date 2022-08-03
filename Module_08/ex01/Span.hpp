@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 15:31:05 by bregneau          #+#    #+#             */
-/*   Updated: 2022/08/02 19:18:03 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/08/03 19:10:39 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <string>
 # include <set>
 
+typedef std::set<int>::iterator set_int_it;
+
 class Span
 {
 
@@ -25,23 +27,43 @@ class Span
 
 	public:
 
-		Span(size_t N);
+		Span(unsigned int N);
 		Span( Span const & src );
 		~Span();
 
+		class FullSpanException: public std::exception
+		{
+			public:
+				virtual const char * what() const throw()
+				{	return ("The span is full");}		
+		};
+		class TooShortSpanException: public std::exception
+		{
+			public:
+				virtual const char * what() const throw()
+				{	return ("The span is too short");}		
+		};
+
 		Span &		operator=( Span const & rhs );
 
-		size_t	size() const;
-		void	addNumber(int i);
-		size_t	shortestSpan() const;
-		size_t	longestSpan() const;
+		unsigned int	size() const;
+		unsigned int	maxSize() const;
+		void			addNumber(int i);
+		template <class InputIterator>
+		void			addNumbers(InputIterator first, InputIterator last)
+		{
+			for (InputIterator it = first; it != last; it++)
+				addNumber(*it);
+		}
+
+		unsigned int	shortestSpan() const;
+		unsigned int	longestSpan() const;
 
 	private:
-		size_t	_N;
+		unsigned int	_N;
 		std::set<int>	_tab;
+		unsigned int	_shortestSpan;
 		
 };
-
-std::ostream &			operator<<( std::ostream & o, Span const & i );
 
 #endif /* ************************************************************ SPAN_H */
