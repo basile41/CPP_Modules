@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 15:31:01 by bregneau          #+#    #+#             */
-/*   Updated: 2022/08/03 21:25:25 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/08/05 17:45:09 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,9 @@ void			Span::addNumber(int i)
 {
 	if (_tab.size() == _N)
 		throw FullSpanException();
-	set_int_it it1 = _tab.insert(i).first;
-	set_int_it it2 = it1;
+	iterator it1 = _tab.insert(i);
+
+	iterator it2 = it1;
 	it1--;
 	unsigned int diff = static_cast<unsigned int>(*it2 - *it1);
 	if (it2 != _tab.begin())
@@ -89,10 +90,3 @@ unsigned int	Span::longestSpan() const
 		throw TooShortSpanException();
 	return *_tab.rbegin() - *_tab.begin();
 }
-
-/*
-** --------------------------------- ACCESSOR ---------------------------------
-*/
-
-
-/* ************************************************************************** */

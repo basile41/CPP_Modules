@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 15:30:53 by bregneau          #+#    #+#             */
-/*   Updated: 2022/08/03 21:04:07 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/08/05 17:42:47 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ int main()
 	{
 		span.addNumber(INT_MIN);
 		span.addNumber(INT_MAX);
-		span.addNumber(-42);
 		span.addNumber(42);
+		span.addNumber(-42);
 		span.addNumber(354);
 	}
 	catch (const std::exception & e)

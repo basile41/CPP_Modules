@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 15:31:05 by bregneau          #+#    #+#             */
-/*   Updated: 2022/08/03 19:10:39 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/08/05 17:42:26 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 # include <string>
 # include <set>
 
-typedef std::set<int>::iterator set_int_it;
-
 class Span
 {
 
@@ -27,6 +25,7 @@ class Span
 
 	public:
 
+	
 		Span(unsigned int N);
 		Span( Span const & src );
 		~Span();
@@ -60,9 +59,12 @@ class Span
 		unsigned int	longestSpan() const;
 
 	private:
-		unsigned int	_N;
-		std::set<int>	_tab;
-		unsigned int	_shortestSpan;
+	
+		typedef std::multiset<int>::iterator iterator;
+
+		unsigned int		_N;
+		std::multiset<int>	_tab;
+		unsigned int		_shortestSpan;
 		
 };
 
