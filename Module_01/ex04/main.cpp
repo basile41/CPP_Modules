@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 20:08:18 by bregneau          #+#    #+#             */
-/*   Updated: 2022/09/26 18:05:52 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/09/26 18:09:19 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int main(int argc, char **argv)
 
 	size_t pos = 0;
 	if (!s1.empty())
-		while (!s1.empty() && (pos = str.find(s1, pos)) != std::string::npos)
+		while ((pos = str.find(s1, pos)) != std::string::npos)
 		{
 			str.erase(pos, s1.length());
 			str.insert(pos, s2);
