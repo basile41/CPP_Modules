@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 20:08:18 by bregneau          #+#    #+#             */
-/*   Updated: 2022/07/14 18:04:57 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/09/26 18:05:52 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,13 @@ int main(int argc, char **argv)
 	std::string 		s2(argv[3]);
 
 	size_t pos = 0;
-	while ((pos = str.find(s1, pos)) != std::string::npos)
-	{
-		str.erase(pos, s1.length());
-		str.insert(pos, s2);
-		pos += s2.length();
-	}
+	if (!s1.empty())
+		while (!s1.empty() && (pos = str.find(s1, pos)) != std::string::npos)
+		{
+			str.erase(pos, s1.length());
+			str.insert(pos, s2);
+			pos += s2.length();
+		}
 	outfile << str;
 	return (0);
 }
