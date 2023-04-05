@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:58:42 by bregneau          #+#    #+#             */
-/*   Updated: 2023/04/05 22:58:55 by bregneau         ###   ########.fr       */
+/*   Updated: 2023/04/05 23:14:45 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,7 +134,7 @@ void parse_file(std::string file, const BitcoinExchange & b)
 			std::cout << "Error: not a positive number." << std::endl;
 			continue;
 		}
-		if (value > 1000)
+		if (value > 10000)
 		{
 			std::cout << "Error: too large a number." << std::endl;
 			continue;
