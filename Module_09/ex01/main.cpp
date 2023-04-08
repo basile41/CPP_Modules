@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 19:35:04 by bregneau          #+#    #+#             */
-/*   Updated: 2023/02/25 22:07:10 by bregneau         ###   ########.fr       */
+/*   Updated: 2023/04/06 20:07:19 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ int main(int argc, char **argv)
 	std::string s(argv[1]);
 	int i = 0;
 
+	if (s.empty())
+	{
+		std::cout << "Empty expression" << std::endl;
+		return (0);
+	}
 	while (s[i])
 	{
 		if (std::isdigit(s[i]))
@@ -37,5 +42,7 @@ int main(int argc, char **argv)
 		i++;
 	}
 	std::cout << operands.top() << std::endl;
+	if (operands.size() > 1)
+		std::cout << "Warning: stack not empty" << std::endl;
 	return (0);
 }
