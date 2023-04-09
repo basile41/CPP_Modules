@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 17:11:27 by bregneau          #+#    #+#             */
-/*   Updated: 2023/04/08 18:50:04 by bregneau         ###   ########.fr       */
+/*   Updated: 2023/04/09 15:57:49 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,13 +74,13 @@ int main(int argc, char **argv)
 	std::cout << "After:	";
 	ft_print_lst(vector_int);
 
-    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC; // calcule le temps écoulé en secondes
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
     std::cout << "Time to process a range of " << vector_int.size() << " elements with std::vector : " << std::fixed << std::setprecision(3) << cpu_time_used * 1000 << " ms." << std::endl;
 
 	start = clock();
 	merge_insertion_sort(list_int, k);
 	end = clock();
 
-	cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC; // calcule le temps écoulé en secondes
+	cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
 	std::cout << "Time to process a range of " << list_int.size() << " elements with std::list : " << std::fixed << std::setprecision(3) << cpu_time_used * 1000 << " ms." << std::endl;
 }
